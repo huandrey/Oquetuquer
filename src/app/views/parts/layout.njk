@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block header %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="/styles/SASS/main.css">
+    {% endblock header %}
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="/"><img src="/assets/logo.png" alt=""></a>
+
+      <form class="search" method="GET" action="products/search">
+        <input 
+            type="text" 
+            name="filter"
+            placeholder="Ainda não sei oq colocar aq"
+            {% if search.term %}
+                value={{search.term}}
+            {% endif %}
+            >
+      </form>
+
+      <nav class="menu">
+          <ul>
+              <li><a href="/create/ads"><i class="material-icons">add</i> Novo Anúncio</a></li>
+              <li>
+                  <a href="/register"><i class="material-icons">account_circle</i>Minha Conta</a>
+              </li>
+          </ul>
+      </nav>
+    </div>
+  </header>
+
+{% block content %}
+{% endblock content %}
+
+{% include 'parts/footer.njk' %}
+
+</body>
+</html>
