@@ -1,0 +1,78 @@
+<div class="fields">
+    <div>Categoria</div>
+    <div>
+        <select name="categorie_id" id="">
+            {% for category in categories %}
+            <option value="{{category.id}}" {% if product.categorie_id == category.id %}selected{% endif %}>{{category.name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
+
+<div class="fields">
+    <div>Você trabalha com cartão?</div>
+    <div>
+        <span>
+            <input type="radio" value="1" name="pagament" {% if product.pagament == '1'%}checked {%endif%}><div class="radio">Sim</div>
+        <span>
+        </span>
+           <input type="radio" value="0" name="pagament" {%if product.pagament == '0'%} checked {%endif%} ><div class="radio">Não</div>
+        </span>
+    </div>
+</div>
+
+<div class="fields group">
+    <div class="fields">
+        <div>CEP</div>
+        <div>
+            <input class="cep" type="text" name="cep" placeholder="58432-140">
+        </div>
+    </div>
+
+    <div class="fields">
+        <div>Rua</div>
+        <div>
+            <input class="adress_name" type="text" name="adress" placeholder="Rua Francisco Lopes">
+        </div>
+    </div>
+
+    <div class="fields">
+        <div>Nº</div>
+        <div>
+            <input class="adress_number" type="text" name="adress" placeholder="256">
+        </div>
+    </div>
+</div>
+
+<div class="fields">
+    <div>Digite seu CPF</div>
+    <div>
+        <input type="text" name="cpf" placeholder="457.786.478-78">
+    </div>
+</div>
+<div class="fields">
+    <div>Descrição</div>
+    <div>
+        <textarea name="description">{{product.description}}</textarea>
+    </div>
+</div>
+
+{# campo de foto #}
+
+{% if product.pagament%}
+<div class="fields">
+    <div>Anúncio disponível?</div>
+    <div>
+        <span>
+            <span>
+                <input type="radio" name="status" id="">Sim
+            </span>
+            <span>
+                <input type="radio" name="status" id="">Não, desejo desativar o anúncio
+            </span>
+    </div>
+</div>
+{% endif %}
+
+
+
