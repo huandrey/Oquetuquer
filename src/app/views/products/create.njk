@@ -1,0 +1,13 @@
+{% extends "parts/layout.njk" %}
+
+{% block content %}
+<section class="container form">
+    <form method="POST" action="/anuncios">
+        <div class="field">
+            <h3>Criando Anúncio{{productId}}</h3>
+            {%include 'products/ads.njk' %}
+        <button class="button" type="submit">Anunciar</button>
+        </div>
+    </form>
+</section>
+{% endblock content %}
