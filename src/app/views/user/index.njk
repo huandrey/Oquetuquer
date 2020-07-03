@@ -1,0 +1,120 @@
+{% extends 'parts/layout.njk' %}
+
+
+{% block content %}
+
+<div class="categories">
+    
+    {# <div class="city container">
+        <nav>
+            <p>Escolher cidade</p>
+            <ul class="cities">
+                <li>Campina Grande</li>
+                <li>João Pessoa</li>
+                <li>Cabedelo</li>
+            </ul>
+        </nav>
+    </div> #}
+
+    <div class="container">
+    
+      <form class="search" method="GET" action="products/search">
+        <input 
+            type="text" 
+            name="filter"
+            placeholder="Pesquise pelo que desejar"
+            {% if search.term %}
+                value={{search.term}}
+            {% endif %}
+            >
+      </form>
+        
+        <div id="items">
+
+            <div class="item">
+                <img src="" alt="">
+                <p>eletricista</p>
+            </div>
+            <div class="item">
+                <img src=".png" alt="">
+                <p>encanador</p>
+
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <p>pedreiro</p>
+
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <p>diarista</p>
+
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <p>pintor</p>
+
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <p>pvc</p>
+
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <p>babá</p>
+
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <p>infomática</p>
+
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <p>eletrônica</p>
+
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <p>manicure</p>
+
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <p>barbeiro</p>
+
+            </div>
+
+
+            <div class="item">
+                <img src="" alt="">
+                <p>costureira</p>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="main container">
+
+    <h2>Anúncios recentes</h2>
+
+    <div id="cards">
+        <div class="card"><div class="image"></div><div class="information-card"></div></div>
+        <div class="card"><div class="image"></div><div class="information-card"></div></div>
+        <div class="card"><div class="image"></div><div class="information-card"></div></div>
+        <div class="card"><div class="image"></div><div class="information-card"></div></div>
+    </div>
+
+    <h2>Recomendados para você na categoria Limpeza</h2>
+
+        <div id="cards">
+            <div class="card"><div class="image"></div><div class="information-card"></div></div>
+            <div class="card"><div class="image"></div><div class="information-card"></div></div>
+            <div class="card"><div class="image"></div><div class="information-card"></div></div>
+            <div class="card"><div class="image"></div><div class="information-card"></div></div>
+        </div>
+</div>
+{% endblock content %}
