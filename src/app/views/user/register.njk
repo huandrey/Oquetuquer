@@ -1,0 +1,50 @@
+{% extends 'parts/layout.njk' %}
+
+
+{% block content %}
+<div id="login-page">
+    <a href="/"><img src="assets/back.svg" style="width: 40px; margin: 24px 30px 0px 60px;" alt=""></a>
+    <div class="everthing">
+    
+        <div class="login">
+            <img class="logo" src="assets/logo.png" alt="">
+            <h3>Crie sua conta</h3>
+            <form action="">
+        
+
+                <div class="info-name">
+                    <div class="name">
+                        <div class="div"><label for="">nome</label></div>
+                        <input type="text" name="" id="">
+                    </div>
+                    <div class="lastname">
+                        <div class="div"><label for="">sobrenome</label></div>
+                        <input type="text" name="" id="">
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div><label for="">email</label></div>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="item">
+                    <div><label for="">senha</label></div>
+                    <input type="password" name="" id="">
+                </div>
+
+
+
+
+                <div class="btn">
+                    <button type="submit">cadastro</button>
+                </div>
+            </form>
+
+            <p>Já tem uma conta? <a href="/acesso">Entrar</a></p>
+        </div>
+    
+        <p class="terms">Ao continuar, você concorda com os <a href="">Termos de Uso</a> e a <a href="">Política de Privacidade</a> do ‘O que tu quer?’. E, também, em receber comunicações via e-mail e push da ‘O que tu quer?’</p>
+    </div>
+
+</div>
+{% endblock content %}
