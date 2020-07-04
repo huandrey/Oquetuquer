@@ -285,6 +285,11 @@ div.main #cards .information-card {
   font-family: Roboto, 'sans-serif';
 }
 
+.field .fields .status {
+  min-height: 50px;
+  margin-bottom: 20px;
+}
+
 .field .state {
   display: -ms-grid;
   display: grid;
@@ -297,20 +302,24 @@ div.main #cards .information-card {
   margin-top: 30px;
 }
 
-.field .adress {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 130px 1fr;
-      grid-template-columns: 130px 1fr;
-  gap: 24px;
-}
-
-.field .adress .fields {
+.field span {
+  position: relative;
+  top: 17px;
+  color: #FFF;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
   margin-top: 10px;
+  margin-right: 5px;
+  padding: 8px 16px;
+  border-radius: 16px;
+  background: #7159c1;
 }
 
-.field .adress .fields input {
-  padding: 12px 24px;
+.field span input[type="radio"] {
+  position: relative;
+  top: 1px;
+  margin-right: 6px;
 }
 
 .field button {
@@ -338,42 +347,12 @@ div.main #cards .information-card {
   background: #5c47a0;
 }
 
-section .container.form {
-  margin-bottom: 24px;
-  max-width: 500px;
-  width: 90%;
-  min-height: 200px;
-  padding: 32px 24px;
-  margin: 32px auto;
-  -webkit-box-shadow: 2px 2px 2px -4px rgba(60, 60, 60, 0.6);
-          box-shadow: 2px 2px 2px -4px rgba(60, 60, 60, 0.6);
-  border: 1px solid #efefef;
-  border-radius: 8px;
-  background: #ff914d;
+.field .delete {
+  background: #f74242;
 }
 
-section .container.form button {
-  background: #4FAA84;
-  color: #FFF;
-  display: block;
-  padding: 12px 16px;
-  font-size: 16px;
-  font-weight: bold;
-  outline: none;
-  cursor: pointer;
-  width: 100%;
-  border-radius: 4px;
-  border: none;
-  -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
-  text-align: center;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-}
-
-section .container.form button:hover {
-  background: #469f7a;
+.field .delete:hover {
+  background: #e93636;
 }
 
 footer {
