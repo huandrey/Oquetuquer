@@ -1,0 +1,18 @@
+{% extends "parts/layout.njk" %}
+
+{% block content %}
+<section class="container form">
+        <div class="field">
+            <form method="POST" action="/ads?_method=PUT">
+                <h3>Editar Anúncio</h3>
+                {%include 'products/ads.njk' %}
+                <input type="hidden" name="id" value="{{ ad.id }}">
+                <button class="button" type="submit">Atualizar</button>
+            </form>
+            <form id="form-delete" action="/ads/?_method=DELETE" method="post">
+                    <input type="hidden" name="id" value="{{ ad.id }}">
+                    <button class="delete" type="submit">Deletar</button>
+            </form>
+        </div>
+</section>
+{% endblock content %}
