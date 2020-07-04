@@ -1,9 +1,15 @@
 
     <div class="fields">
         <label for="">Categoria</label>
-        <select name="categorie_id" id="">
+        <select name="category_id">
             {% for category in categories %}
-            <option value="{{category.id}}" {% if product.categorie_id == category.id %}selected{% endif %}>{{category.name}}</option>
+            <option 
+                value="{{ category.id }}"
+                {% if ad.category_id == category.id %} 
+                    selected 
+                {% endif %}>
+                {{category.name}}
+                </option>
             {% endfor %}
         </select>
     </div>
@@ -12,56 +18,49 @@
     <label for="">Você trabalha com cartão?</label>
     <div class="options">
         <span>
-            <input type="radio" value="1" name="pagament" {% if product.pagament == '1'%}checked {%endif%}>Sim
+            <input type="radio" value="1" name="pagament" {% if ad.pagament == '1'%}checked {%endif%}>Sim
         </span>
         <span>
-           <input type="radio" value="0" name="pagament" {%if product.pagament == '0'%} checked {%endif%}>Não
+           <input type="radio" value="0" name="pagament" {%if ad.pagament == '0'%} checked {%endif%}>Não
         </span>
     </div>
 </div>
 
-{# <div class="fields">
-    <div>Seu número de celular</div>
-    <div>
-        <input type="text" name="contact" placeholder="(83) 9 95436578">
-    </div>
-</div> #}
-
 <div class="state">
     <div class="fields">
         <label for="">Estado</label>
-        <input class="estado" type="text" name="cep" placeholder="Selecione um estado">
+        <input class="estado" type="text" name="state" placeholder="Selecione um estado" value="{{ad.state}}">
     </div>
 
     <div class="fields">
         <label for="">Cidade</label>
-        <input class="adress_city" type="text" name="adress" placeholder="Selecione uma cidade">
+        <input class="adress_city" type="text" name="city" placeholder="Selecione uma cidade" value="{{ad.city}}">
     </div>
 </div>
 
 <div class="fields">
     <div>Digite seu CPF</div>
-    <input type="text" name="cpf" placeholder="457.786.478-78">
+    <input type="text" name="cpf" placeholder="457.786.478-78" value="{{ad.cpf}}">
 </div>
 
 <div class="fields">
     <div>Descrição</div>
-    <textarea name="description">{{product.description}}</textarea>
+    <textarea name="description" value="{{ ad.description }}">{{ ad.description }}</textarea>
 </div>
 
 {# campo de foto #}
 
-{% if product.pagament%}
+{% if (ad.status == '1') or (ad.status == '0') %}
 <div class="fields">
     <div>Anúncio disponível?</div>
-    <div>
+    <div class="status">
             <span>
-                <input type="radio" name="status" id="">Sim
+                <input type="radio"  value="1" name="status"{% if ad.status == '1' %} checked {% endif %}>Sim
             </span>
             <span>
-                <input type="radio" name="status" id="">Não, desejo desativar o anúncio
+                <input type="radio" value="0" name="status" {% if ad.status == '0' %} checked {% endif %}>Não, desejo desativar o anúncio !
             </span>
     </div>
 </div>
-{% endif %}
+{% endif %} 
 
