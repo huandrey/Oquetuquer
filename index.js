@@ -1,12 +1,12 @@
 const express = require('express')
 const routes = require('./src/routes')
 const nunjucks = require('nunjucks')
-//const methodOverride = require('method-override')
+const methodOverride = require('method-override')
 const index = express()
 
-//index.use(express.urlencoded( { extended: true } ))
+index.use(express.urlencoded( { extended: true } ))
 index.use(express.static('public'))
-//index.use(methodOverride('_method'))
+index.use(methodOverride('_method'))
 index.use(routes)
 
 index.set('view engine', 'njk')
